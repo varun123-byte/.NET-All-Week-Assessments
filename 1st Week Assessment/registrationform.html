@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Survey Form</title>
+</head>
+<body>
+    <h1 id="title">Decode Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form action="www.google.com" method="POST" id="survey-form">
+        <fieldset>
+            <label for="name-label">Name <input type="text" id="fname" name="fname" placeholder="Enter your name" required></label>
+            <label for="email-label">Email <input type="email" id="mail" name="mail" placeholder="Enter your Email" required></label>
+        <label for="number-label">Age <span>(optional)</span><input type="number" name="number" id="age" placeholder="Age" min="13" max="120"></label>
+        </fieldset>
+        <fieldset>
+            <label for="dropdown-label">Which option best describes your current role?
+                <select id="dropdown" name="dropdown" aria-placeholder="Select current role">
+                    <option value="">Select current role</option>
+                    <option value="1">Associate Software Engineer</option>
+                    <option value="2">Software Engineer</option>
+                    <option value="3">Test Engineer</option>
+                    <option value="4">Other</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="radio-label">Would you recommend freeCodeCamp to a friend?</label>
+            <input type="radio" id="radio" name="radio" class="form"/> Definitely<br>
+            <input type="radio" id="radio" name="radio" class="form"/> Maybe<br>
+            <input type="radio" name="radio" class="form"/> Not sure</label>
+        </fieldset>
+        <fieldset>
+            <label for="dropdown-label">What is your favourite feature of Decode?
+                <select id="dropdown" name="dropdown">
+                    <option value="">Select an option</option>
+                    <option value="first">HTML</option>
+                    <option value="second">CSS</option>
+                    <option value="third" disabled>JS</option>
+                    <option value="fourth">Other</option>
+                </select>
+            </label>
+        </fieldset>
+        <fieldset>
+            <label for="dropdown-label">What would you like to see improved?</label>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Front-end Projects<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Back-end Projects<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Data Visualization<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Challenges<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Open source Community<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Github help rooms<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Videos<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> City meetups<br>
+            <input type="checkbox" id="dropdown" name="dropdown" class="form"/> Wiki<br>
+        </fieldset>
+        <label for="textarea">Provide a comment:
+            <textarea id="textarea" name="textarea" rows="10" cols="60" placeholder="Please provide a comments"></textarea>
+        </label><br>
+        <input type="submit" id="submit" value="Submit"/>
+    </form><br>
+</body>
+</html>
