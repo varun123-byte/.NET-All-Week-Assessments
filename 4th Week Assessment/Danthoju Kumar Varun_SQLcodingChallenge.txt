@@ -1,0 +1,142 @@
+Name: Danthoju Kumar Varun 
+Employee ID: 1033309
+
+use AdventureWorks2022;
+go
+
+--Problem 1: List Product Names and Prices 
+
+select * from Production.Product;
+go
+select Name, ListPrice
+from Production.Product;
+
+
+--Problem 2: Find Customers from a Specific City 
+
+select * from Sales.Customer
+select * from Person.Person
+select * from Person.Address
+select * from Person.EmailAddress
+select * from Person.StateProvince
+select * from Purchasing.PurchaseOrderHeader
+select * from Production.Location
+select * from Person.BusinessEntityContact
+select * from Person.BusinessEntityAddress
+go
+select pp.FirstName, pp.LastName, pe.EmailAddress
+from Person.Person pp
+join Person.EmailAddress pe 
+on pp.BusinessEntityID = pe.BusinessEntityID
+join Person.Address pa
+on pp.BusinessEntityID = pa.AddressID
+join Sales.Customer sc 
+on pp.BusinessEntityID = sc.PersonID
+where City='seattle';
+
+
+--Problem 3: Calculate Total Sales for a Product 
+
+select * from Sales.SalesOrderDetail;
+select * from Production.Product;
+go
+select pp.Name, sum(OrderQty*UnitPrice) as Total_sales
+from Sales.SalesOrderDetail as ss
+join Production.Product as pp
+on ss.ProductID = pp.ProductID
+where pp.ProductID = 793
+group by pp.Name;
+
+
+--Problem 4: List Employees by Job Title 
+
+select * from HumanResources.Employee;
+go
+select pp.FirstName + ' '+ pp.LastName as FullName, he.JobTitle
+from HumanResources.Employee he
+join Person.Person pp
+on pp.BusinessEntityID = he.BusinessEntityID
+order by he.JobTitle ASC;
+
+
+--Problem 5: Find Order Details for a Customers 
+select * from Sales.SalesOrderHeader
+select * from Sales.SalesOrderDetail
+select * from Production.Product
+go
+select CONCAT(pp.Name, '---', sd.OrderQty) as order_details
+from Sales.SalesOrderHeader sh
+join Sales.SalesOrderDetail sd
+on sd.SalesOrderID = sh.SalesOrderID
+join Production.Product pp
+on pp.ProductID = sd.ProductID
+WHERE sh.CustomerID = 29485;
+
+
+--Problem 6: Find Orders Placed by a Salesperson  
+
+select * from Sales.SalesOrderHeader
+select * from HumanResources.Employee
+select * from sales.Customer
+go
+select sh.SalesOrderID as OrderNumber, sh.OrderDate, pp.FirstName+ ' '+pp.LastName as Customer_name
+from Sales.SalesOrderHeader sh
+join Person.Person pp
+on pp.BusinessEntityID = sh.SalesPersonID
+where sh.SalesPersonID=276;
+
+
+
+--Problem 7: Identify Inactive Customers  
+
+select * from Sales.SalesOrderHeader;
+select * from Sales.Customer;
+select * from Person.Person;
+select * from Person.EmailAddress
+go
+select pp.FirstName, pp.LastName,pe.EmailAddress
+from person.Person as pp
+join person.EmailAddress as  pe 
+on pe.BusinessEntityID = pp.BusinessEntityID
+left join Sales.SalesOrderHeader as sh
+on sh.CustomerID = pe.BusinessEntityID
+where sh.SalesOrderID IS null;
+
+
+
+--Problem 8: Calculate Average Sales per Category  
+
+select * from Production.Product;
+select * from Sales.SalesOrderDetail;
+select * from Production.ProductCategory
+select * from Production.ProductSubcategory
+go
+select ppc.Name, AVG(OrderQty * UnitPrice) as AverageSalesAmount
+from Production.ProductCategory ppc
+join Production.ProductSubcategory pps
+on ppc.ProductCategoryID = pps.ProductCategoryID
+join Production.Product pp
+on pps.ProductSubcategoryID = pp.ProductSubcategoryID
+join Sales.SalesOrderDetail sd
+on pp.ProductID = sd.ProductID
+group by ppc.Name;
+
+--Problem 9: Find Top-Selling Products   
+select * from Production.Product;
+select * from Sales.SalesOrderDetail;
+go
+select top 10 pp.Name, sum(sd.OrderQty) as Total_quantity
+from Production.Product pp
+join Sales.SalesOrderDetail sd
+on pp.ProductID = sd.ProductID
+group by pp.Name
+order by Total_quantity desc;
+
+
+--Problem 10: Identify Late Shipments 
+
+select * from Sales.SalesOrderHeader
+go
+select SalesOrderNumber, ShipDate, DueDate, OrderDate
+from Sales.SalesOrderHeader
+where ShipDate < DueDate;
