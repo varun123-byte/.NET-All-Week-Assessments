@@ -1,0 +1,79 @@
+ <!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>Toy Categories</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h1>Toy Categories</h1>
+  <ul class="list-group">
+    <li class="list-group-item">
+      <h2>Outdoor Toys</h2>
+      <ul>
+        <li><a href="#" class="toy" data-title="Swing set" data-price="100" data-description="A fun outdoor swing set for kids" data-category="Outdoor Toys">Swing set</a></li>
+        <li><a href="#" class="toy" data-title="Trampoline" data-price="200" data-description="A large trampoline for kids to jump on" data-category="Outdoor Toys">Trampoline</a></li>
+        <li><a href="#" class="toy" data-title="Bubble machine" data-price="50" data-description="A machine that blows bubbles for kids to play with" data-category="Outdoor Toys">Bubble machine</a></li>
+      </ul>
+    </li>
+    <li class="list-group-item">
+      <h2>Building Toys</h2>
+      <ul>
+        <li><a href="#" class="toy" data-title="LEGO" data-price="50" data-description="A set of LEGO blocks for kids to build with" data-category="Building Toys">LEGO</a></li>
+        <li><a href="#" class="toy" data-title="Blocks" data-price="20" data-description="A set of building blocks for kids to play with" data-category="Building Toys">Blocks</a></li>
+        <li><a href="#" class="toy" data-title="K'NEX" data-price="30" data-description="A set of K'NEX building toys for kids to play with" data-category="Building Toys">K'NEX</a></li>
+      </ul>
+    </li>
+    <li class="list-group-item">
+      <h2>Electronic Toys</h2>
+      <ul>
+        <li><a href="#" class="toy" data-title="Tablet" data-price="300" data-description="A tablet for kids to play games and learn on" data-category="Electronic Toys">Tablet</a></li>
+        <li><a href="#" class="toy" data-title="Robot" data-price="100" data-description="A robot toy for kids to play with" data-category="Electronic Toys">Robot</a></li>
+        <li><a href="#" class="toy" data-title="Smartwatch" data-price="150" data-description="A smartwatch for kids to wear and play games on" data-category="Electronic Toys">Smartwatch</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="modal fade" id="toyModal" tabindex="-1" role="dialog" aria-labelledby="toyModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="toyModalLabel"></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Price:</strong> <span id="toyPrice"></span></p>
+        <p><strong>Description:</strong> <span id="toyDescription"></span></p>
+        <p><strong>Category:</strong> <span id="toyCategory"></span></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('.toy').click(function() {
+      var title = $(this).data('title');
+      var price = $(this).data('price');
+      var description = $(this).data('description');
+      var category = $(this).data('category');
+      $('#toyModalLabel').text(title);
+      $('#toyPrice').text(price);
+      $('#toyDescription').text(description);
+      $('#toyCategory').text(category);
+      $('#toyModal').modal('show');
+    });
+  });
+</script>
+
+</body>
+</html> -->
