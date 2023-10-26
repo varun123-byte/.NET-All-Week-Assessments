@@ -1,0 +1,79 @@
+body
+{
+  background-image: url('lo.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header
+{
+  background-color: rgb(18, 160, 18);
+  box-shadow: 2px 5px 10px 2px rgb(131, 232, 161);
+}
+
+.col-lg-8 h1
+{
+    color: white;
+    font-size: 50px; 
+    text-shadow: 0 0 3px rgb(200, 212, 222), 0 0 5px rgb(0, 136, 255);
+}
+
+#image1
+{
+    position: absolute;
+    margin-top: 10px;
+    display: block;
+}
+
+h1.ram
+{
+    font-size: 50px;
+    color: rgb(118, 255, 118);
+    text-shadow: 0 0 3px rgb(200, 212, 222), 0 0 5px rgb(0, 136, 255);
+    
+}
+
+h3
+{
+    font-size: 35px;
+    color: rgb(118, 255, 118);
+    text-shadow: 0 0 3px rgb(200, 212, 222), 0 0 5px rgb(0, 136, 255);
+}
+
+input.ram1
+{
+  background-color: rgb(9, 77, 9);
+  width: 85%;
+  border-radius: 35px;
+  border: 2px solid rgb(140, 196, 138);
+  box-shadow: 2px 5px 10px 2px rgb(131, 232, 161);
+  font-size: 30px;
+}
+
+
+.listitem{
+  box-shadow: 2px 5px 5px 2px rgb(131, 232, 161);
+  text-shadow:2px 5px 10px 2px rgb(131, 232, 161) ;
+  width: 10px;
+  margin-left: 55%;
+}
+
+.mybtn
+{
+  background-color: rgb(9, 62, 9);
+  width: 30%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+#items
+{
+  align-items: center;
+}
+
+#items input[type="checkbox"]
+{
+  background-color: red;
+}

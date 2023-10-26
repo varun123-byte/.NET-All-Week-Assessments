@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+    <title>To Do List Application</title>
+</head>
+<body >
+
+
+    <!-- Heading -->
+	<header class=" text-white p-2">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-4 " >
+                    <img src="plant.jpg" class="float-end" width="100" height="100"/>
+                </div>
+				<div class="col-lg-8">
+					<font face="Comic sans MS" size="11" color="white">
+						<strong>Calvin's Daily Plantation</strong>
+					</font>
+					
+				</div>
+			</div>
+		</div>
+	</header>
+
+
+<!-- Add Todo list -->
+<center>
+	<div class="container mt-3">
+    <h1 class="ram mt-5">***Add Plants to fields today***</h1>
+    <label id="lblsuccess" class="text-success" style="display: none;"></label>
+    <form id="addForm">
+        <div class="container">
+          <pre>  <input type="text" onkeyup="toggleButton(this, 'submit')" class="ram1 form-control" style="height: 100px;" id="item" required></pre><br>
+            <input type="submit" class="mybtn btn btn-dark" id="submit" value="Submit" >
+        </div>
+    </form>
+
+
+    
+    <form id="addForm">
+        <ul class="list-group px-5" id="items">
+        </ul>
+    </form>
+	</div>
+</div>
+</center>
+</body>
+</html>
