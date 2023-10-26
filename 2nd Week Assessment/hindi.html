@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
+    <title>Document</title>
+</head>
+<body data-bs-theme="dark">
+    <style>  
+        .checked {  
+            color : yellow;  
+            font-size : 20px;  
+        }  
+        .unchecked {  
+            font-size : 20px;  
+        }  
+    </style>
+    <div class="container-fluid">
+        <div class="row" style="background-color: rgb(41, 40, 40);">
+            <div class="col-2 mx-5">
+                <img src="markstonelogo.png" alt="" width="100" height="100"/>
+            </div>
+            <div class="col-9 float-start">
+                <div class="Jumbotron p-4 text-white  text-center" style="margin-right: 20%;">
+                    <h1>MARK'S STONE REVIEW HUB</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div class="container-fluid float-end" style="background-color: rgb(24, 24, 24);"> 
+            <ul class="nav float-end p-2" >
+              <li class="nav-item bg-dark mx-2 border border-dark border-1 rounded-2">
+                  <a class="nav-link text-white" href="home.html"><b>Home</b></a>
+              </li>
+              <li class="nav-item bg-dark mx-2 border border-dark border-1 rounded-2">
+                  <a class="nav-link text-white" href="about.html"><b>About Us</b></a>
+              </li>
+              <li class="nav-item bg-dark mx-2 border border-dark border-1 rounded-2">
+                  <a class="nav-link text-white" href="home.html"><b>Movies</b></a>
+              </li>
+              
+              <li class="nav-item bg-dark mx-2 border border-dark border-1 rounded-2">
+                <a class="nav-link text-white" href="contact.html"><b>Contact Us</b></a>
+              </li>
+              <li class="nav-item bg-dark mx-2 border border-dark border-1 rounded-2">
+                  <a class="nav-link text-white float-end disabled" href="#">Disabled</a>
+              </li>
+            </ul>
+          </div> 
+        </div>     
+    </section>
+    <div class="container">
+        <h1 class="text-center p-5 m-5">Bollywood Movies</h1>
+        <div class="row bg-dark mb-5">
+            <div class="col-lg-4">
+                <div class="card" style="width: 100%;">
+                   <a href="https://www.imdb.com/title/tt15354916/?ref_=nv_sr_srsg_0_tt_4_nm_4_q_jawan"> <img src="jawan.jpg" class="card-img-top" alt="" width="100" height="200"/>
+                </a>
+                    <div class="card-body">
+                        <h3 class="card-title text-center">Jawaan</h3>
+                        <center>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">See Review</button>
+                                    <div class="modal modal-lg" id="myModal">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content"> 
+                                                <img src="jawan.jpg" width="100%" height="100%">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Jawaan</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star unchecked"></span>  
+                                                    <!-- To display unchecked star rating icons -->  
+                                                    <span class = "fa fa-star unchecked"></span>  
+                                                </div>
+                                                <div class="modal-footer">
+                                                    A high-octane action thriller which outlines the emotional journey of a man who is set to rectify the wrongs in the society.
+                                                 </div>
+                                            </div>
+    </div></center>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card p-2 " style="width: 100%;">
+                   <a href="https://www.imdb.com/title/tt14993250/?ref_=nv_sr_srsg_0_tt_2_nm_6_q_rocky%2520rani" ><img src="rr.jpg" class="card-img-top" alt="" height="200"/></a>
+                    <div class="card-body">
+                        <h3 class="card-title text-center">RR ki prem kahani</h3>
+                        <center>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1">See Review</button>
+                                    <div class="modal modal-lg" id="myModal1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content"> 
+                                                <img src="rr.jpg" width="100%" height="100%">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Rocky Rani ki Prem Kahani</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <!-- To display unchecked star rating icons -->  
+                                                    <span class = "fa fa-star unchecked"></span>  
+                                                </div>
+                                                <div class="modal-footer">
+                                                    Flamboyant Punjabi Rocky and intellectual Bengali journalist Rani fall in love despite their differences. After facing family opposition, they decide to live with each other's families for three months before getting married.
+                                                 </div>
+                                            </div>
+    </div></center>  
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card p-2 " style="width: 100%;">
+                   <a href="https://www.imdb.com/title/tt13131232/?ref_=fn_al_tt_1" ><img src="mm.jpg" class="card-img-top" alt="" height="200"/></a>
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Mission Majnu</h3>
+                       
+                        <center>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal2">See Review</button>
+                                    <div class="modal modal-lg" id="myModal2">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content"> 
+                                                <img src="mm.jpg" width="100%" height="100%">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Mission Majnu</h4>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star checked"></span>  
+                                                    <span class = "fa fa-star unchecked"></span>  
+                                                    <!-- To display unchecked star rating icons -->  
+                                                    <span class = "fa fa-star unchecked"></span>  
+                                                </div>
+                                                <div class="modal-footer">
+                                                    In the 1970s, an undercover Indian spy takes on a deadly mission to expose a covert nuclear weapons program in the heart of Pakistan.or three months before getting married.</button>
+                                                 </div>
+                                            </div>
+    </div></center>  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <footer class="container-fluid  p-3 text-center text-white">
+        <p></p>CopyRights    <a href="www.google.com">Google Here</a></p>
+          <h6 class="text-white text-center">Follow us on</h6>
+          <div class="footer">
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-fac   ebook" style="color: #fefefe;"></i></a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-twitter" style="color: white;"></i></a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-google" style="color: white;"></i></a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-instagram" style="color: white;"></i></a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-linkedin" style="color: white;"></i></a>
+            <a href="" class="me-4 text-reset">
+              <i class="fa fa-github" style="color: white;"></i></a>
+          </div>
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script>
+    const ratings = document.getElementById('rating1'); const rating1 = new CDB.Rating(ratings);
+    rating1.getRating;
+  </script>
+</body>
+</html>
