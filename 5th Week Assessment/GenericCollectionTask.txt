@@ -1,0 +1,179 @@
+problem statemet 4:
+
+Build a generic collection to manage a library's inventory of books. Create a class
+"Book" with properties like Title, Author, and ISBN. Implement a generic collection
+(e.g., List<Book>) to add, remove, search, and display books. Utilize generics to
+ensure type safety and efficient data management.
+
+
+solution:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        private static void BookManagementSystem()
+        {
+            BookManage bookmanage = new BookManage();
+            while (true)
+            {
+                Console.WriteLine("1) Add Book in bookstall");
+                Console.WriteLine("2) Remove Book from bookstall");
+                Console.WriteLine("3) Find the books in bookstall");
+                Console.WriteLine("4) Display all the books in bookstall");
+                Console.WriteLine("5) Exit");
+                Console.WriteLine("Enter the possible Option here");
+                string choice = Console.ReadLine();
+                switch (choice)
+                {
+                    case "1":
+                        Console.WriteLine("Enter Book name:");
+                        string title = Console.ReadLine();
+                        Console.WriteLine("Enter Author of the book:");
+                        string author = Console.ReadLine();
+                        Console.WriteLine("Enter ISBN of the book:");
+                        string isbn = Console.ReadLine();
+                        IBook newitem = new BookItems
+                        {
+                            Title = title,
+                            Author = author,
+                            ISBN = isbn,
+                        };
+                        bookmanage.Add(newitem);
+                        break;
+                    case "2":
+                        Console.WriteLine("Enter book to Remove:");
+                        string remove = Console.ReadLine();
+                        bookmanage.RemoveBook(remove);
+                        break;
+                    case "3":
+                        Console.WriteLine("Enter which isbn book to view:");
+                        string view = Console.ReadLine();
+                        bookmanage.Search(view);
+                        break;
+                    case "4":
+                        bookmanage.ViewBook();
+                        break;
+                    case "5":
+                        return;
+                    default:
+                        Console.WriteLine("Invalid");
+                        break;
+                }
+                Console.WriteLine("Press enter to continue...");
+                Console.ReadLine();
+            }
+        }
+}
+}
+}
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    class BookItems : IBook
+    {
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string ISBN { get; set; }
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class BookManage
+    {
+        private List<IBook> Books;
+        public BookManage()
+        {
+            Books = new List<IBook>();
+        }
+        public void Add(IBook item)
+        {
+            Books.Add(item);
+            Console.WriteLine("Book is Added");
+        }
+        public void RemoveBook(string ISBN)
+        {
+            IBook booktoRemove = Books.Find(book => book.ISBN == ISBN);
+            if (booktoRemove != null)
+            {
+                Books.Remove(booktoRemove);
+                Console.WriteLine("Book Removed from Bookstall");
+            }
+            else
+            {
+                Console.WriteLine("Book with ISBN Number not found");
+            }
+        }
+        public void Search(string ISBN)
+        {
+            IBook findbook = Books.Find(book => book.ISBN == ISBN);
+            if (findbook != null)
+            {
+                Console.Write($"{findbook.Title} by {findbook.Author} and {findbook.ISBN}\n");
+            }
+            else
+            {
+                Console.WriteLine("Book is not found in bookstall");
+            }
+        }
+        public void ViewBook()
+        {
+            Console.WriteLine("The Total Books are:");
+            foreach (var bookss in Books)
+            {
+                Console.WriteLine($"{bookss.Title} by {bookss.Author} (ISBN: {bookss.ISBN})");
+            }
+        }
+    }
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    interface IBook
+    {
+        string Title { get; set; }
+        string Author { get; set; }
+        string ISBN { get; set; }
+    }
+}
+
+
+
+
+

@@ -1,0 +1,99 @@
+Problem Statement 4:
+Design a simple event management system using delegates and events. Create a
+class "EventManager" that allows users to subscribe to events and trigger them.
+Implement custom delegates and events to handle various event types (e.g.,
+Conference, Seminar, Workshop). Demonstrate how delegates and events can be
+used to notify subscribers when events occur.
+
+
+
+solution:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+{
+
+        private static void EventsandDelegates()
+        {
+            EventManager eventManager = new EventManager();
+            Subscriber subscriber = new Subscriber();
+            subscriber.Subscribe(eventManager);
+
+            eventManager.TriggerConference("Conference 1 is happening next week!");
+            eventManager.TriggerSeminar("Seminar 2 is happening tomorrow!");
+        }
+}
+}
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class EventManager
+    {
+        public delegate void ConferenceEventHandler(string message);
+        public delegate void SeminarEventHandler(string message);
+
+        public event ConferenceEventHandler Conference;
+        public event SeminarEventHandler Seminar;
+
+        public void TriggerConference(string message)
+        {
+            Conference?.Invoke(message);
+        }
+
+        public void TriggerSeminar(string message)
+        {
+            Seminar?.Invoke(message);
+        }
+    }
+}
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Linq;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Subscriber
+    {
+        public void Subscribe(EventManager eventManager)
+        {
+            eventManager.Conference += ConferenceHandler;
+            eventManager.Seminar += SeminarHandler;
+        }
+
+        private void ConferenceHandler(string message)
+        {
+            Console.WriteLine("Conference: " + message);
+        }
+
+        private void SeminarHandler(string message)
+        {
+            Console.WriteLine("Seminar: " + message);
+        }
+
+    }
+}

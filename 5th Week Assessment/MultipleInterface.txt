@@ -1,0 +1,197 @@
+1 - Problem statement: 
+Create a scenario where you need to model a "Person" class with properties like
+Name, Age, and Address. Implement multiple interfaces (e.g., IDriver, IStudent,
+IEmployee) to represent different roles that a person can have. Create a class that
+inherits from Person and implements multiple interfaces, showcasing multiple
+inheritance through interfaces.
+
+
+Solution:
+Program.cs File:-
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+        private static void MultipleInterface()
+        {
+            var PersonRole = new PersonRole()
+            {
+                Name = "Swaraj Praneeth",
+                Age = 21,
+                Address = "New Delhi"
+            };
+
+            Console.WriteLine($" Name: {PersonRole.Name}\n Age: {PersonRole.Age}\n Address: {PersonRole.Address}\n");
+            Console.WriteLine("\n\n***IDriving interface methods***");
+            PersonRole.Drive();
+            PersonRole.StartDriveAge();
+            PersonRole.StopDrive();
+            PersonRole.DriverAddress();
+
+            Console.WriteLine("\n\n***IStudent interface methods***");
+            PersonRole.StudiesTime();
+            PersonRole.StudentAge();
+            PersonRole.DoHomeWork();
+
+            Console.WriteLine("\n\n***IEmployee interface methods***");
+            PersonRole.Work();
+            PersonRole.AttendMeeting();
+            PersonRole.RequestHoliday();
+		}
+        }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public String  Address { get; set; }
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class PersonRole : Person, IDriver, IStudent, IEmployee
+    {
+        public PersonRole() { }
+
+        public void Drive()
+        {
+            Console.WriteLine($"{Name} is the perspn driving");
+        }
+        public void StartDriveAge()
+        {
+            Console.WriteLine($"{Age} years must be this for driving");
+        }
+        public void StopDrive()
+        {
+            Console.WriteLine($"{Name} is the person  stop driving daily at 11PM for take break");
+        }
+        public void DriverAddress()
+        {
+            Console.WriteLine($"He stays in {Address} to book any advance for trip");
+        }
+
+        public void StudiesTime()
+        {
+            Console.WriteLine($"{Name} is the name of the student");
+        }
+        public void StudentAge()
+        {
+            Console.WriteLine($"His age is around {Age}years old");
+        }
+        public void DoHomeWork()
+        {
+            Console.WriteLine($"{Name} does homework daily at his home that is {Address}");
+        }
+        public void Work()
+        {
+            Console.WriteLine($"There is one guy name {Name} does work properly and efficiently");
+        }
+        public void AttendMeeting()
+        {
+            Console.WriteLine($"And the person age is small like {Age} around and attends meeting everyday");
+        }
+        public void RequestHoliday()
+        {
+            Console.WriteLine($"He wont take any live also for vacation because he is far that is {Address} he stays so!!!");
+        }
+
+    }
+}
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    public interface IDriver
+    {
+        void Drive();
+        void StartDriveAge();
+        void StopDrive();
+        void DriverAddress();
+        
+    }
+}
+IDriver.cs Interface upone
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    public interface IStudent
+    {
+        void StudiesTime();
+        void StudentAge();
+        void DoHomeWork();
+
+    }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal interface IEmployee
+    {
+        void Work();
+        void AttendMeeting();
+        void RequestHoliday();
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+		

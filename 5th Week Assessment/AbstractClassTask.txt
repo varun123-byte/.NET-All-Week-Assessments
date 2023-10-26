@@ -1,0 +1,174 @@
+Problem statement 1:
+Implement an abstract class "Shape" with abstract methods for calculating area and
+perimeter. Create three subclasses (e.g., Circle, Rectangle, Triangle) that inherit from
+Shape and provide their own implementations for these methods. Demonstrate
+polymorphism by creating an array of Shapes and calculating the total area and
+perimeter.
+
+
+
+solution:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+       private static void AbstractTask()
+       {
+           Shape[] shapes =
+                       {
+               new Circle(12.40),
+               new Rectangle(8.45, 17.28),
+               new Triangle(6.11, 15, 18.88)
+           };
+           double Total_Area = 0;
+           double Total_Perimeter = 0;
+
+           foreach (Shape shape in shapes)
+           {
+               Total_Area += shape.Calculating_Area();
+               Total_Perimeter += shape.Calculating_Perimeter();
+           }
+           Console.WriteLine($"Total Area of Circle, Rectangle, Triangle is: {Total_Area}");
+           Console.WriteLine($"Total Perimeter of Circle, Rectangle, Triangle is: {Total_Perimeter}");
+       }
+}
+}
+}
+program.cs
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal abstract class Shape
+    {
+        public abstract double Calculating_Area();
+        public abstract double Calculating_Perimeter();
+    }
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Circle : Shape
+    {
+        public double radius {  get; set; }
+        public Circle() { }
+
+        public  Circle(double radius)
+        {
+            this.radius = radius;
+        }
+        public override double Calculating_Area()
+        {
+            return Math.PI * radius * radius;
+        }
+        public override double Calculating_Perimeter()
+        {
+            return 2 * Math.PI * radius;
+        }
+
+
+    }
+}
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Rectangle : Shape
+    {
+        public double length { get; set; }
+        public double bredth { get; set; }
+        public double Result { get; set; }
+        public Rectangle() { }
+
+        public Rectangle(double length, double bredth)
+        {
+            this.length = length;
+            this.bredth = bredth;
+        }
+        public override double Calculating_Area()
+        {
+            Result = length * bredth;
+            return Result;
+            
+        }
+        public override double Calculating_Perimeter()
+        {
+            return 2 * length * bredth;
+        }
+    }
+}
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace C_5thWeekCodingChallenge
+{
+    internal class Triangle :Shape
+    {
+        public double a {  get; set; }
+        public double b { get; set; }
+        public double c { get; set; }
+
+        public Triangle(double a, double b, double c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+        public override double Calculating_Area()
+        {
+            double s = ( a + b + c ) / 2;
+            return Math.Sqrt( s * ( s - a ) * ( s - b ) * ( s - c ));
+        }
+        public override double Calculating_Perimeter()
+        {
+            return a + b + c;
+        }
+    }
+}
+
+
+
+
+
+
